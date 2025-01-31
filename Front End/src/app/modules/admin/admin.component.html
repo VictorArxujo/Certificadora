@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined">
+
+
+<div class="container">
+    <aside class="sidebar">
+        <img [src]="imagePath" alt="Logo" class="logo">
+        <nav class="menu">
+            <button class="menu-item active">
+                <span class="material-icons-outlined">home</span>
+            </button>
+            <button class="menu-item" [routerLink]="'/config'">
+                <span class="material-icons-outlined">settings</span>
+            </button>
+            <button class="menu-item" [routerLink]="'/home'"> 
+                <span class="material-icons-outlined">logout</span>
+            </button>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header class="header">
+            <h1>Bem vindo, Usuário</h1>
+        </header>
+
+        <section class="content">
+            <div class="graph">
+                <h1 class="text-2">Pessoas Impactadas com o Projeto</h1>
+                <canvas #meuGrafico class="grafico"></canvas>
+            </div>
+        </section>
+        
+        <section class="opc">
+            <div class="options">
+                <button (click)="navegarParaDoacoes()" class="option-button">CONTROLE DE ESTOQUE</button>
+                <button (click)="navegarParaRegistro()" class="option-button">REGISTRO DE DOAÇÕES</button>
+            </div>
+        </section>
+
+    </main>
+</div>

@@ -1,0 +1,54 @@
+<div class="container">
+    <h1>LOGIN</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <label for="user-type">Tipo de Usuário:</label>
+      <select id="user-type" formControlName="userType">
+        <option value="voluntario">Voluntário</option>
+        <option value="administrador">Administrador</option>
+      </select>
+  
+      <!-- Campos para Voluntário -->
+      <div *ngIf="loginForm.get('userType')?.value === 'voluntario'">
+        <label for="cpf">CPF:</label>
+        <input
+          id="cpf"
+          type="text"
+          formControlName="cpf"
+          placeholder="Digite seu CPF"
+        />
+  
+        <label for="password">Senha:</label>
+        <input
+          id="password"
+          type="password"
+          formControlName="password"
+          placeholder="Digite sua senha"
+        />
+      </div>
+  
+      <!-- Campos para Administrador -->
+      <div *ngIf="loginForm.get('userType')?.value === 'administrador'">
+        <label for="id">ID:</label>
+        <input
+          id="id"
+          type="text"
+          formControlName="adminId"
+          placeholder="Digite seu ID"
+        />
+  
+        <label for="password-admin">Senha:</label>
+        <input
+          id="password-admin"
+          type="password"
+          formControlName="adminPassword"
+          placeholder="Digite sua senha"
+        />
+      </div>
+  
+      <button type="submit" class="submit-button" [disabled]="loginForm.invalid">
+        Entrar
+      </button>
+      <a routerLink="/" class="back-link">Voltar</a>
+    </form>
+  </div>
+  

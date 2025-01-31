@@ -1,0 +1,25 @@
+<!-- home.component.html -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined">
+<div class="container">
+    <div class="left-section">
+        <h1>"Doe. Distribua. Transforme."</h1>
+        <div class="subtitle">Junte-se a nós hoje.</div>
+        <div class="button-container">
+            <!-- Usando routerLink para navegação interna no Angular -->
+            <a routerLink="/login" class="login">
+                <i class="material-icons-outlined">login</i> Login
+            </a>
+            <a routerLink="/registro2" class="cadastro">
+                <i class="material-icons-outlined">edit</i> Cadastre-se
+            </a>
+        </div>
+        <div class="terms">
+            <p>Ao continuar, você concorda com <a href="#">Ajudar a campanha</a> e <a href="#">Combater a pobreza menstrual</a>.</p>
+        </div>
+    </div>
+    <div class="right-section">
+        <img [src]="imagePath" alt="Logo bons Fluidos">
+        <h2>Combate à Pobreza Menstrual</h2>
+    </div>
+</div>
