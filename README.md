@@ -1,10 +1,16 @@
-# YasminApp
+<<<<<<< HEAD
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.7.
+# Certificadora
 
-## Development server
+Este é o projeto de certificadora.
 
-To start a local development server, run:
+## YasminApp
+
+Este projeto foi gerado utilizando o [Angular CLI](https://github.com/angular/angular-cli) versão 19.0.7.
+
+## Servidor de Desenvolvimento
+
+Para iniciar o servidor local, execute:
 
 ```bash
 ng serve
@@ -56,4 +62,8 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 
 ## Additional Resources
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+# For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+# Certificadora
+
+> > > > > > > 856f018e42242d362d0c519dfbe6f8ee63b8fc73
