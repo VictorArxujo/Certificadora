@@ -1,0 +1,247 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Poppins, sans-serif;
+    background-color: #f6a3b5; 
+    color: #540013;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Estrutura principal */
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+/* Barra lateral */
+.sidebar {
+    width: 14%;
+    min-height: 100vh;
+    background-color: #E30650;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    gap: 20px;
+    color: #fff;
+    justify-content: flex-start; 
+}
+
+.logo {
+    width: 130px;
+    margin-bottom: 190px;
+}
+
+.menu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 20px;
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    width: 50px; 
+    height: 80px; 
+    gap: 5px; 
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.menu-item span {
+    font-size: 24px; 
+}
+
+.menu-item:hover, .menu-item.active {
+    background-color: #b60528;
+    border-radius: 5px;
+}
+
+/* Conteúdo principal */
+.main-content {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: transparent; /* Remover qualquer fundo branco */
+}
+
+.header {
+    background-color: transparent; /* Remover fundo branco do cabeçalho */
+    padding: 10px 20px;
+    border-bottom: 2px solid #E30650;
+    font-size: 24px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Alinha ao topo */
+    gap: 20px;
+}
+
+.options {
+    width: 30%; /* Reduz largura da seção OPÇÕES */
+    padding: 30px;
+}
+
+.extension {
+    width: 65%; /* Aumenta largura da seção SAIBA MAIS */
+    height: 430px; /* Define uma altura maior */
+    padding: 30px;
+}
+
+.options h2, .extension h2 {
+    font-size: 28px;
+    color: #540013;
+    margin-bottom: 70px;
+    text-align: center;
+}
+
+.option-button {
+    width: 100%;
+    padding: 19px;
+    margin: 18px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #E30650;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.option-button:hover {
+    background-color: #b60528;
+}
+#logout {
+    margin-top: 200px;
+}
+.content{
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    padding-right: 0%;
+    justify-content: center;
+}
+.products{
+
+    display: flex;
+    flex-direction: column;
+
+}.products table {
+    width: 100%;
+    border-collapse: separate; /* Permite espaçamento */
+    border-spacing: 10px 5px; /* Espaçamento horizontal e vertical */
+  }
+  
+  .products th, .products td {
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .products th {
+    background-color: #d32f2f; /* Vermelho */
+    color: white;
+    border-radius: 15px 15px 0 0;
+  }
+  
+  .products tbody tr {
+    background-color: #f1f5f9;
+  }
+  
+  .products tbody tr:nth-child(even) {
+    background-color: #eaf1f8;
+  }
+  .products h1 {
+
+    font-size: 20px;
+    color: #111212;
+    margin-bottom: 24px;
+
+  }
+
+/* Estilo do título */
+.graph h1 {
+    font-size: 20px;
+    color: #111212;
+    margin-top: 24px;
+}
+
+.grafico {
+    margin-top: 24px;
+    width: 987px; 
+    height: 100px; 
+}
+
+/* Estilo da div principal */
+.content {
+    display: flex;
+    justify-content: space-between; /* Espaço entre os elementos */
+    align-items: flex-start; /* Alinha os elementos ao topo */
+    gap: 20px; /* Espaçamento entre os elementos */
+    margin-top: 20px;
+    padding-right: 0%;
+}
+
+/* Estilo do gráfico */
+.grafico {
+    width: 100%; /* Ocupa todo o espaço disponível */
+    max-width: 500px; /* Limita a largura para 767px */
+    height: 100px; /* Define uma altura fixa */
+}
+
+/* Estilo do canvas */
+canvas {
+    width: 100% !important; /* Faz o canvas ocupar 100% da largura da div */
+    height: 100% !important; /* Faz o canvas ocupar 100% da altura da div */
+}
+.botaovolta{ /* Div pai do botao */
+    display: flex;
+    justify-content: center;
+}
+
+.button-back{
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: #E30650;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #fff;
+    font-size: 24px;
+    box-shadow: 3px 3px 8px rgba(255, 2, 112, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-left: 160px;
+
+
+}
+.button-back:hover {
+
+    background-color: #b60528;
+    transform: translateX(-50%) scale(1.1);
+}
