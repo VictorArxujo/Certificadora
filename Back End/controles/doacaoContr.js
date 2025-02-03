@@ -4,7 +4,7 @@ const Doacoes = require('../modelos/doacoes')
 exports.doar = async (req, res, next) => {
     const errors = validationResult(req);
     if(!errors.isEmpty()) return
-    const cpfUsuario = req.body.cpfUsuario
+    const cpfUsuario = req.body.cpfUsuario;
     const cidade = req.body.cidade;
     const endereco = req.body.endereco;
     const telefone = req.body.telefone;
