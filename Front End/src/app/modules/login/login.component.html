@@ -7,6 +7,24 @@
       <option value="administrador">Administrador</option>
     </select>
 
+    <!-- UNIFICAÇÃO DOS TIPOS DE USUÁRIOS -->
+
+    <!-- <label for="cpf">CPF:</label>
+    <input
+      id="cpf"
+      type="text"
+      formControlName="cpf"
+      placeholder="Digite seu CPF"
+    />
+
+    <label for="password">Senha:</label>
+    <input
+      id="password"
+      type="password"
+      formControlName="password"
+      placeholder="Digite sua senha"
+    /> -->
+
     <!-- Campos para Voluntário -->
     <div *ngIf="loginForm.get('userType')?.value === 'voluntario'">
       <label for="cpf">CPF:</label>
@@ -28,19 +46,19 @@
 
     <!-- Campos para Administrador -->
     <div *ngIf="loginForm.get('userType')?.value === 'administrador'">
-      <label for="cpf">CPF:</label>
+      <label for="id">ID:</label>
       <input
-        id="cpf"
-        type="cpf"
-        formControlName="cpf"
-        placeholder="Digite seu CPF"
+        id="id"
+        type="text"
+        formControlName="adminId"
+        placeholder="Digite seu ID"
       />
 
-      <label for="password">Senha:</label>
+      <label for="password-admin">Senha:</label>
       <input
-        id="password"
+        id="password-admin"
         type="password"
-        formControlName="password"
+        formControlName="adminPassword"
         placeholder="Digite sua senha"
       />
     </div>

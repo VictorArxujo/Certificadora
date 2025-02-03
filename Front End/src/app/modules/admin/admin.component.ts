@@ -14,7 +14,8 @@ export class AdminComponent implements AfterViewInit{
 
   imagePath = "assets/Marca_Bons_Fluidos2.png"
 
-  @ViewChild('meuGrafico', { static: false }) elemento!: ElementRef;
+  @ViewChild('meuGrafico2', { static: false }) elemento!: ElementRef;
+
 
   constructor(private router: Router) {}
 
@@ -41,39 +42,34 @@ export class AdminComponent implements AfterViewInit{
   }
 
 
-
-
   ngAfterViewInit(): void {
-    const ctx = this.elemento.nativeElement.getContext('2d');
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: [
-          "Janeiro", "Fevereiro", "Março", "Abril", "Maio",
-          "Junho", "Julho", "Agosto", "Setembro",
-          "Outubro", "Novembro", "Dezembro"
-        ],
-        datasets: [
-          {
-            label: 'Dados Mensais',
-            data: [30, 45, 24, 20, 30, 50, 65, 60, 60, 75, 100, 120],
-            borderColor: '#E1EBFF',
-            backgroundColor: ' #b60528',
-            borderWidth: 2
-          }
-        ]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: true,
-        plugins: {
-          legend: {
-            display: true,
-            position: 'top'
-          }
+    const canvas = this.elemento?.nativeElement as HTMLCanvasElement; // Garante que o elemento é um canvas
+    const ctx = canvas.getContext('2d'); // Obtém o contexto 2D
+
+    if (ctx) { // Garante que o contexto 2D foi obtido corretamente
+      new Chart(ctx, {
+        type: 'bar', // Tipo de gráfico
+        data: {
+          labels: ['Absorvente Externo com Abas', 'Absorvente Externo sem Abas', 'Absorvente Interno', 'Outros'], // Exemplo de labels
+          datasets: [
+            {
+              label: 'Absorventes',
+              data: [10, 20, 30,10 ], // Exemplo de dados
+              borderColor: '#E1EBFF',
+              backgroundColor: ' #b60528',
+              borderWidth: 2
+            }
+          ]
+        },
+        options: {
+          responsive: true, // Faz o gráfico ser responsivo
+          maintainAspectRatio: true, // Mantém a proporção do gráfico
         }
-      }
-    });
-    console.log('oie');
+      });
+    } else {
+      console.error('Não foi possível obter o contexto 2D do canvas.');
+    }
+
+    console.log('Gráfico inicializado');
   }
 }
