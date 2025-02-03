@@ -1,15 +1,15 @@
 const db = require('../conexao/db');
 module.exports = class Usuario {
-    constructor(tipo, nome, cpf, senha, id) {
+    constructor(tipo, nome, cpf, senha, email) {
         this.tipo = tipo;
         this.nome = nome;
         this.cpf = cpf;
         this.senha = senha;
-        this.id = id;
+        this.email = email;
     }
     static save(usuario) {
         return db.execute(
-            'INSERT INTO Usuarios (tipo, nome, cpf, senha, id) VALUES(?,?,?,?,?)', [usuario.tipo, usuario.nome, usuario.cpf, usuario.senha, usuario.id]
+            'INSERT INTO Usuarios (tipo, nome, cpf, senha, email) VALUES(?,?,?,?,?)', [usuario.tipo, usuario.nome, usuario.cpf, usuario.senha, usuario.email]
         )
     }
 };
