@@ -17,6 +17,7 @@ body {
     width: 100%;
     max-width: 500px;
     box-sizing: border-box;
+    width: 100%;
 }
 
 h1 {
@@ -70,4 +71,8 @@ a.back-link {
 
 a.back-link:hover {
     text-decoration: underline;
+}
+
+.label-user-type {
+    margin-top: 10px;
 }

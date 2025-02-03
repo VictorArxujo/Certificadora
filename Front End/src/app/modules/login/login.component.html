@@ -3,21 +3,22 @@
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <label for="user-type">Tipo de Usuário:</label>
       <select id="user-type" formControlName="userType">
+        <option value="" disabled selected>Selecione</option>
         <option value="voluntario">Voluntário</option>
         <option value="administrador">Administrador</option>
       </select>
-  
-      <!-- Campos para Voluntário -->
-      <div *ngIf="loginForm.get('userType')?.value === 'voluntario'">
-        <label for="cpf">CPF:</label>
+
+        <!-- Campos para Voluntário -->
+      <div>
+        <label class="label-user-type" for="cpf">CPF:</label>
         <input
           id="cpf"
           type="text"
-          formControlName="cpf"
+          formControlName="cpf"            
           placeholder="Digite seu CPF"
         />
-  
-        <label for="password">Senha:</label>
+
+        <label class="label-user-label" for="password">Senha:</label>
         <input
           id="password"
           type="password"
@@ -25,8 +26,7 @@
           placeholder="Digite sua senha"
         />
       </div>
-  
-      <!-- Campos para Administrador -->
+      <!-- Campos para Administrador
       <div *ngIf="loginForm.get('userType')?.value === 'administrador'">
         <label for="id">ID:</label>
         <input
@@ -43,7 +43,7 @@
           formControlName="adminPassword"
           placeholder="Digite sua senha"
         />
-      </div>
+      </div> -->
   
       <button type="submit" class="submit-button" [disabled]="loginForm.invalid">
         Entrar

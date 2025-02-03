@@ -120,11 +120,15 @@ p.slogan {
 .user-type {
     margin-bottom: 20px;
     position: relative;
+    font-size: 18;   
+}
+
+.label-user-type {
+    padding-top: 10px;
 }
 
 .user-type-label {
     font-size: 1rem;
-    font-weight: bold;
     color: #333;
     margin-bottom: 5px;
     text-align: left;

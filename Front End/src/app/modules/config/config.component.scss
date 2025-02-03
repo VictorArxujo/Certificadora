@@ -104,6 +104,7 @@ body {
     gap: 25px;
     margin-top: 60px;
     align-self: center;
+    align-items: center;
 }
 
 /* Cabeçalho do cartão */
@@ -113,7 +114,7 @@ body {
     align-items: center;
     font-size: 24px;
     color: #333;
-    margin-top: -60px;
+    margin-top: -40px;
 }
 
 .user-info {
@@ -147,10 +148,14 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-    margin-right: 65px; /* Reduzi para aproximar o avatar */
+    margin-left: 100px;
 }
 
 /* Botões do cartão */
+.div-card-button {
+
+}
+
 .card-button {
     width: 100%;
     padding: 17px;
@@ -373,4 +378,16 @@ a.back-link:hover {
     .senha-card button {
         width: 60%;
     }
+}
+
+.about {
+    margin-bottom: 20px;
+}
+
+.card-content {
+    width: 100%;
+}
+
+.li-about {
+    margin-left: 20px;
 }
