@@ -1,0 +1,76 @@
+<div class="container">
+    <aside class="sidebar">
+        <img [src]="imagePath" alt="Logo bons Fluidos" class="logo">
+        <nav class="menu">
+            <button class="menu-item active">
+                <i class="material-icons-outlined">settings</i>
+            </button>
+            <button class="menu-item">
+                <i class="material-icons-outlined">notifications</i>
+            </button>
+            <button class="menu-item" [routerLink]="'/home'">
+                <i class="material-icons-outlined">logout</i>
+            </button>
+        </nav>
+    </aside>
+    <main class="main-content">
+        <header class="header">
+            <h1>Configurações</h1>
+        </header>
+
+        <!-- Cartão principal -->
+        <div class="card" *ngIf="!isPasswordCardVisible && !isAboutCardVisible">
+            <div class="card-header">
+                <div class="user-info">
+                    <h2>Hello, User</h2>
+                    <span>✔ Conta verificada</span>
+                    <span>✔ Última doação em 10/01/2025</span>
+                </div>
+                <div class="user-avatar">
+                    <i class="material-icons-outlined">person</i>
+                </div>
+            </div>
+            <button class="card-button" (click)="showPasswordCard()">Alterar Senha</button>
+            <button class="card-button" (click)="showAboutCard()">Sobre o Aplicativo</button>
+        </div>
+        <a *ngIf="!isPasswordCardVisible && !isAboutCardVisible" (click)="goBack()" class="back-link">Voltar</a>
+
+        <!-- Cartão de alteração de senha -->
+        <div class="card senha-card" *ngIf="isPasswordCardVisible">
+            <div class="card-header">
+                <h2>Alterar Senha</h2>
+            </div>
+            <form class="card-content">
+                <label for="current-password">Senha Atual</label>
+                <input type="password" id="current-password" placeholder="Digite sua senha atual">
+                <label for="new-password">Nova Senha</label>
+                <input type="password" id="new-password" placeholder="Digite sua nova senha">
+                <label for="confirm-password">Confirmar Nova Senha</label>
+                <input type="password" id="confirm-password" placeholder="Confirme sua nova senha">
+                <button type="submit" class="card-button">Salvar Alterações</button>
+            </form>
+            <button class="card-button" (click)="backToMainCard()">Voltar</button>
+        </div>
+
+        <!-- Cartão sobre o aplicativo -->
+        <div class="card about-card" *ngIf="isAboutCardVisible">
+            <div class="card-header">
+                <h2>Sobre o Aplicativo</h2>
+            </div>
+            <div class="card-content">
+                <p class="about">
+                    O aplicativo foi desenvolvido como parte do projeto de extensão <strong>Bons Fluidos</strong>, que tem como objetivo auxiliar no combate à pobreza menstrual. Este projeto foi criado para a disciplina certificadora de competência 1, turma C51, pelos seguintes alunos:
+                </p>
+                <ul>
+                    <li class="li-about">Jéssica Leme Freitas</li>
+                    <li class="li-about">Leonardo Chidiquimo Faleco</li>
+                    <li class="li-about">Pedro Otávio de Brito</li>
+                    <li class="li-about">Victor dos Santos Araújo</li>
+                    <li class="li-about">Yasmin Sayuri Matuzaki Cardoso</li>
+                </ul>
+                
+            </div>
+            <button class="card-button" (click)="backToMainCard()">Voltar</button>
+        </div>
+    </main>
+</div>

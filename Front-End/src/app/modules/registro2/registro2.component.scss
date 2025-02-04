@@ -1,0 +1,272 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #f694a3;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte, se necessário */
+    width: 90%; /* Ajusta a largura para 100% da tela */
+    max-width: 1200px; /* Limita a largura máxima */
+    min-width: 320px;
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 125px auto; /* Centraliza a container */
+}
+
+.left-section {
+    flex: 1; /* Garante que cada seção ocupe 50% da largura, mas se ajustem quando necessário */
+    padding: 20px;
+    min-width: 300px; 
+}
+
+form {
+    width: 80%; /* Reduz a largura do formulário */
+    max-width: 400px; /* Limita a largura máxima */
+    margin: 0 auto;
+}
+
+form label {
+    margin-top: 20px;
+    display: block;
+    color: #333;
+}
+
+form input:not([type="checkbox"]) {
+    width: 106%;
+    padding: 12px;
+    margin-top: 5px;
+    margin-bottom: 15x;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 6px 6px 12px rgba(255, 2, 112, 0.3);
+}
+
+form .terms {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+form .terms label {
+    margin-top: 4px;
+    margin-left: 7px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.register-btn{
+    width: 50%;
+    background-color: #E30650;
+    color: white;
+    border: none;
+    padding: 10px 6px;
+    font-size: 14px;
+    margin: 10px auto;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    text-align: center;
+}
+
+.register-btn:hover{
+    background-color: #f05f6c;
+}
+
+.right-section {  
+    background-color: #E30650;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    flex: 1; /* Garante que cada seção ocupe 50% da largura, mas se ajustem quando necessário */
+    padding: 20px;
+    min-width: 300px; 
+}
+
+h2 {
+    text-align: center;
+}
+
+.highlight {
+    color: #f05f6c;
+}
+
+p {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #000000;
+    text-align: center;
+}
+
+p.slogan {
+    color: #ffff
+}
+
+.user-type {
+    margin-bottom: 20px;
+    position: relative;
+    font-size: 18;   
+}
+
+.label-user-type {
+    padding-top: 10px;
+}
+
+.user-type-label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.user-type button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f05f6c;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.user-type button:hover {
+    background-color: #d14c5b;
+}
+
+.hidden {
+    display: none;
+}
+
+.back-button {
+    background: none;
+    border: none;
+    color: #f05f6c;
+    font-size: 14px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.logo {
+    width: 230px;
+    margin-bottom: 20px;
+}
+
+.brand-name {
+    font-size: 20px;
+    margin: 0;
+}
+
+.slogan {
+    font-size: 15px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+select {
+    width: 106%;
+    padding: 12px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 6px 6px 12px rgba(255, 2, 112, 0.3);
+}
+
+input[type="checkbox"]:checked {
+    accent-color: #E30650;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        width: 90%;
+        flex-direction: column;
+        max-height: auto;
+    }
+    .left-section, .right-section {
+        width: 100%;
+    }
+    .right-section {
+        padding: 20px 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Alinha os itens verticalmente em telas pequenas */
+        width: 100%;
+        padding: 10px;
+    }
+
+    .left-section, .right-section {
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 15px
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .register-btn, .google-btn {
+        width: 100%;
+        padding: 16px;
+    }
+
+    .terms {
+        flex-direction: column;
+    }
+}
+@media (min-width: 1440px) {
+    .container {
+        width: 70%; /* Reduz a largura em telas muito grandes */
+    }
+}
+
+@media (max-width: 1024px) {
+    .container {
+        width: 90%; /* Ocupa quase toda a largura */
+    }
+
+    .right-section {
+        padding: 20px 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Itens alinhados verticalmente */
+        width: 95%; /* Maximiza o uso de espaço */
+    }
+
+    .left-section, .right-section {
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    .register-btn, .google-btn {
+        width: 100%;
+        padding: 16px;
+    }
+}
+
+
