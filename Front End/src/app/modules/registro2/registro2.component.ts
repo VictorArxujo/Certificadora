@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router'; // Importe o Router
 
+
 @Component({
   selector: 'app-registro2',
   standalone: false,
@@ -48,7 +49,6 @@ export class Registro2Component {
 
   onSubmit(): void {
     if (this.registrationForm.valid) {
-
       console.log('Formulário enviado:', this.registrationForm.value);
 
       // Lógica de navegação corrigida

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router'; // Importar Router para navegação
+import { DoarService } from '../../services/doar.service';
 
 @Component({
   selector: 'app-regis-do',
@@ -7,6 +8,7 @@ import { Router } from '@angular/router'; // Importar Router para navegação
   templateUrl: './regis-do.component.html',
   styleUrls: ['./regis-do.component.scss']
 })
+
 export class RegisDoComponent {
   imagePath = "assets/Marca_Bons_Fluidos2.png"
   donation = {
@@ -20,10 +22,9 @@ export class RegisDoComponent {
     quantidade: 0,
     termos: false
   };
-
   isEspecificarVisible = false;
 
-  constructor(private router: Router) {} // Injetando o Router para navegação
+  constructor(private router: Router, private doarService: DoarService) {} // Injetando o Router para navegação
 
   setActive(index: number): void {
     // Lógica para setar o botão ativo
@@ -37,9 +38,19 @@ export class RegisDoComponent {
   toggleEspecificarField(): void {
     this.isEspecificarVisible = this.donation.doar === 'Outro';
   }
-
+  
   onSubmit(): void {
-    // Exibe a mensagem de sucesso
+      const doacao = {
+      "cpfUsuario" : Number(this.donation.cpf.trim().replace(".","").replace("-","")),
+      "cidade": this.donation.cidade,
+      "endereco": this.donation.endereco,
+      "telefone": this.donation.telefone,
+      "tipo": this.donation.doar === "Outro"? this.donation.especificar: this.donation.doar,
+      "quantidade": Number(this.donation.quantidade)
+    };
+    localStorage.setItem('cpf', doacao.cpfUsuario.toString());
+    console.log(doacao);
+    this.doarService.doar(doacao).subscribe((msg) => console.log(msg));
     alert('Doação realizada com sucesso!');
     
     // Redireciona para a página /voluntario
@@ -47,5 +58,7 @@ export class RegisDoComponent {
     
     // Aqui você pode processar os dados da doação, como enviar para um servidor, etc.
     console.log(this.donation);
+    
   }
+
 }

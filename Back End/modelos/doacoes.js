@@ -9,6 +9,13 @@ module.exports = class Doacao {
         this.tipo = tipo;
         this.quantidade = quantidade;
     }
+
+    static consultar(cpfUsuario) {
+        return db.execute(
+            'SELECT * FROM Doacoes WHERE cpfUsuario = ?', [cpfUsuario]
+        );
+    }
+
     static save(doacao) {
         return db.execute(
             'INSERT INTO Doacoes (cpfUsuario, cidade, endereco, telefone, tipo, quantidade) VALUES(?,?,?,?,?,?)', [doacao.cpfUsuario, doacao.cidade, doacao.endereco, doacao.telefone, doacao.tipo, doacao.quantidade]

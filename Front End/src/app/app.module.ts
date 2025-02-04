@@ -15,16 +15,19 @@ import { ConfigComponent } from './modules/config/config.component';
 import { AdminComponent } from './modules/admin/admin.component';
 import { ControleComponent } from './modules/controle/controle.component';
 import { RegisAdmComponent } from './modules/regis-adm/regis-adm.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HomeModule,
+    HttpClientModule
   ],
   providers: [
     provideAnimationsAsync()

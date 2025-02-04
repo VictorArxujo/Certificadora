@@ -5,7 +5,7 @@
     </a>
     <h2>Registre sua <span class="highlight">Conta individual!</span></h2>
     <p>Para fins de regulamentação da indústria, seus dados são necessários.</p>
-    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" novalidate>
       <!-- Tipo de Usuário -->
       <div class="user-type">
         <p class="user-type-label">Tipo de Usuário</p>

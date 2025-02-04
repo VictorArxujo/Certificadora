@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router'; // Importe o Router
+import { DoarService } from '../../services/doar.service';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class SuasDoComponent {
   imagePath = "assets/Marca_Bons_Fluidos2.png"
   activeIndex: number = 0; // Índice do item ativo no menu
 
-  constructor(private router: Router) {}  // Injeção do Router no construtor
+  constructor(private router: Router, private doarService: DoarService) {}  // Injeção do Router no construtor
 
   // Método para navegar de volta para a página do voluntário
   goBack(): void {
@@ -26,7 +27,11 @@ export class SuasDoComponent {
 
   // Método para verificar se um item está ativo
   isActive(index: number): boolean {
+
     return this.activeIndex === index;
   }
-
+  
+  puxar() {
+    this.doarService.puxar(Number(localStorage.getItem('cpf'))).subscribe();
+  }
 }

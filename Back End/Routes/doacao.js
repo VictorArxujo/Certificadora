@@ -17,4 +17,6 @@ router.post(
     doacaoControle.doar  
 );
 
+router.post('/puxar', doacaoControle.puxar)
+
 module.exports = router

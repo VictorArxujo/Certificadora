@@ -29,3 +29,22 @@ exports.doar = async (req, res, next) => {
         next(err);
     }
 }
+
+
+exports.puxar = async (req, res, next) => {
+    const cpfUsuario = req.body.cpfUsuario;
+    try {
+        const doacao = await Doacao.puxar(cpfUsuario);
+        if(doacao.isEmpty()) {
+            const error = new Error('Doações não encontradas.');
+            error.statusCode = 401;
+            throw error;
+        }
+    } catch (err) {
+        if(!err.statusCode) {
+            err.statusCode = 500;
+        }
+        next(err);
+    }
+
+}
