@@ -20,22 +20,11 @@ export class Registro2Component {
       email: ['', [Validators.required, Validators.email]],
       senha: ['', Validators.required],
       cpf: [''],
-      adminId: [''],
       termos: [false, Validators.requiredTrue]
     });
 
-    // Adicionar validações condicionais com base no tipo de usuário
-    this.registrationForm.get('userType')?.valueChanges.subscribe((userType) => {
-      if (userType === 'voluntario') {
-        this.registrationForm.get('cpf')?.setValidators([Validators.required]);
-        this.registrationForm.get('adminId')?.clearValidators();
-      } else if (userType === 'administrador') {
-        this.registrationForm.get('adminId')?.setValidators([Validators.required]);
-        this.registrationForm.get('cpf')?.clearValidators();
-      }
-      this.registrationForm.get('cpf')?.updateValueAndValidity();
-      this.registrationForm.get('adminId')?.updateValueAndValidity();
-    });
+    this.registrationForm.get('cpf')?.setValidators([Validators.required]);
+    this.registrationForm.get('adminId')?.updateValueAndValidity();
   }
 
   isVoluntario(): boolean {
