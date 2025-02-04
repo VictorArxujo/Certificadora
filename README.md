@@ -1,6 +1,51 @@
 # Projeto Bons Fluidos
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.7.
+Este projeto foi desenvolvido usando [Angular CLI](https://github.com/angular/angular-cli) version 19.0.7.
+
+# Descrição do Sistema Proposto
+
+O Bons Fluidos é um sistema web desenvolvido para gerenciar a arrecadação e distribuição de produtos de higiene menstrual sustentáveis. Seu principal objetivo é garantir que meninas em situação de vulnerabilidade tenham acesso a esses produtos, permitindo que frequentem a escola com dignidade e minimizando o impacto da pobreza menstrual.
+
+O sistema oferece funcionalidades para controle de estoque, registro de doações e distribuição dos produtos. Também permite a geração de relatórios e disponibiliza uma interface para escolas solicitarem os itens necessários.
+
+## Usuários Esperados para o Sistema
+
+Administradores: Gerenciam o estoque, doações e distribuição dos produtos.
+
+Voluntários: Registram doações recebidas e distribuem produtos.
+
+
+## Problemas que o Sistema Pretende Resolver
+
+Falta de Acesso: Facilitar o acesso a produtos de higiene menstrual para meninas em situação de vulnerabilidade.
+
+Controle de Estoque: Garantir uma gestão eficiente dos produtos, evitando desperdícios e faltas.
+
+Transparência nas Doações: Manter um registro claro e acessível das doações e distribuições.
+
+Conscientização: Promover informações sobre pobreza menstrual e educação.
+
+## Requisitos Funcionais
+
+Registro de Produtos: Adição de novos produtos ao estoque.
+
+Registro de Doações: Permitir o registro das doações recebidas.
+
+Gestão de Estoque: Controle de entrada e saída de produtos, incluindo relatórios.
+
+Geração de Relatórios: Informar sobre doações, estoque e distribuições.
+
+Autenticação: Controle de acesso com diferentes níveis de usuário.
+
+## Tecnologias Utilizadas
+
+Frontend: Angular, HTML, CSS, JavaScript.
+
+Backend: Node.js com Express.js.
+
+Banco de Dados: MySQL.
+
+IDEs: Visual Studio Code (desenvolvimento), Figma (design de interface e protótipos).
 
 ## Development server
 
