@@ -18,37 +18,15 @@ export class LoginComponent {
       userType: ['voluntario', Validators.required], // Tipo de usuário padrão
       cpf: [''], // Campo para voluntário
       password: [''], // Campo para senha de voluntário
-      adminId: [''], // Campo para ID de administrador
-      adminPassword: [''] // Campo para senha de administrador
-    });
-
-    // Observa mudanças no tipo de usuário e ajusta as validações
-    this.loginForm.get('userType')?.valueChanges.subscribe((userType) => {
-      if (userType === 'voluntario') {
-        this.setValidatorsForVoluntario();
-      } else {
-        this.setValidatorsForAdministrador();
-      }
     });
 
     // Inicializa validações para o tipo padrão
-    this.setValidatorsForVoluntario();
+    this.setValidators();
   }
 
-  setValidatorsForVoluntario() {
+  setValidators() {
     this.loginForm.get('cpf')?.setValidators([Validators.required]);
     this.loginForm.get('password')?.setValidators([Validators.required]);
-    this.loginForm.get('adminId')?.clearValidators();
-    this.loginForm.get('adminPassword')?.clearValidators();
-
-    this.updateValidation();
-  }
-
-  setValidatorsForAdministrador() {
-    this.loginForm.get('adminId')?.setValidators([Validators.required]);
-    this.loginForm.get('adminPassword')?.setValidators([Validators.required]);
-    this.loginForm.get('cpf')?.clearValidators();
-    this.loginForm.get('password')?.clearValidators();
 
     this.updateValidation();
   }
@@ -56,8 +34,6 @@ export class LoginComponent {
   updateValidation() {
     this.loginForm.get('cpf')?.updateValueAndValidity();
     this.loginForm.get('password')?.updateValueAndValidity();
-    this.loginForm.get('adminId')?.updateValueAndValidity();
-    this.loginForm.get('adminPassword')?.updateValueAndValidity();
   }
 
   onSubmit() {
