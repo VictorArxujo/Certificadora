@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router'; // Importe o Router
+import { AuthService } from '../../services/auth.service';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class Registro2Component {
   imagePath = "assets/Marca_Bons_Fluidos1.png"
   registrationForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router) {
+  constructor(private fb: FormBuilder, private router: Router, private authService: AuthService) {
     this.registrationForm = this.fb.group({
       userType: ['', Validators.required],
       nome: ['', Validators.required],
@@ -38,6 +39,15 @@ export class Registro2Component {
 
   onSubmit(): void {
     if (this.registrationForm.valid) {
+      const usuario = {
+        "tipo": this.registrationForm.get('userType')?.value,
+        "nome": this.registrationForm.get('nome')?.value,
+        "cpf": Number(this.registrationForm.get('cpf')?.value.trim().replace(".","").replace("-","")),
+        "senha": this.registrationForm.get('senha')?.value,
+        "email": this.registrationForm.get('email')?.value,        
+      };
+      console.log(usuario);
+      this.authService.signup(usuario).subscribe((msg)=>console.log(msg))
       console.log('Formulário enviado:', this.registrationForm.value);
 
       // Lógica de navegação corrigida

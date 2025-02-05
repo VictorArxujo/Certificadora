@@ -1,5 +1,6 @@
 const { validationResult } = require('express-validator');
-const Doacoes = require('../modelos/doacoes') 
+const Doacoes = require('../modelos/doacoes');
+const db = require('../conexao/db'); 
 
 exports.doar = async (req, res, next) => {
     const errors = validationResult(req);
@@ -31,15 +32,17 @@ exports.doar = async (req, res, next) => {
 }
 
 
-exports.puxar = async (req, res, next) => {
-    const cpfUsuario = req.body.cpfUsuario;
+exports.fetchAll = async (req, res, next) => {
     try {
-        const doacao = await Doacao.puxar(cpfUsuario);
-        if(doacao.isEmpty()) {
-            const error = new Error('Doações não encontradas.');
-            error.statusCode = 401;
-            throw error;
+        const cpfUsuario = req.query.cpfUsuario; // Captura o CPF da URL
+        let query = "SELECT * FROM doacoes"; // Query sem filtro
+    
+        // Se o CPF foi passado, adicionamos o filtro
+        if (cpfUsuario) {
+          query += " WHERE cpfUsuario = ?";
         }
+          const [rows] = await db.execute(query, cpfUsuario ? [cpfUsuario] : []);
+          res.json(rows); // Retorna os resultados filtrados
     } catch (err) {
         if(!err.statusCode) {
             err.statusCode = 500;

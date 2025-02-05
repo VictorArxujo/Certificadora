@@ -10,9 +10,9 @@ module.exports = class Doacao {
         this.quantidade = quantidade;
     }
 
-    static consultar(cpfUsuario) {
+    static fetchAll() {
         return db.execute(
-            'SELECT * FROM Doacoes WHERE cpfUsuario = ?', [cpfUsuario]
+            'SELECT * FROM Doacoes'
         );
     }
 

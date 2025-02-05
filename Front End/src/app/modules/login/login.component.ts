@@ -1,6 +1,7 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router'; // Importe o Router
+import { AuthService } from '../../services/auth.service';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { Router } from '@angular/router'; // Importe o Router
 export class LoginComponent {
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router) {
+  constructor(private fb: FormBuilder, private router: Router, private authService: AuthService) {
     this.loginForm = this.fb.group({
       userType: ['voluntario', Validators.required], // Tipo de usuário padrão
       cpf: [''], // Campo para voluntário
@@ -36,8 +37,14 @@ export class LoginComponent {
     this.loginForm.get('password')?.updateValueAndValidity();
   }
 
+  login() {
+    this.authService.login(this.loginForm.get('cpf')?.value.trim().replace(".","").replace("-",""), this.loginForm.get('password')?.value, this.loginForm.get('userType')?.value).subscribe();
+  }
+
   onSubmit() {
     if (this.loginForm.valid) {
+      this.login();
+      console.log(this.login());
       const formData = this.loginForm.value;
       console.log('Formulário enviado:', formData);
 

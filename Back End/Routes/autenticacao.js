@@ -16,4 +16,6 @@ router.post(
     authControle.registro  
 );
 
+router.post('/login', authControle.login);
+
 module.exports = router

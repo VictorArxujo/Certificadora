@@ -2,13 +2,13 @@
     <aside class="sidebar">
         <img [src]="imagePath" alt="Logo bons Fluidos" alt="Logo" class="logo">
         <nav class="menu">
-            <button class="menu-item" [ngClass]="{ 'active': isActive(0) }" (click)="setActive(0)"  [routerLink]="'/voluntario'">
+            <button class="menu-item" [ngClass]="{ 'active': isActive(0) }" (click)="setActive(0)" [routerLink]="'/voluntario'">
                 <i class="material-icons-outlined">home</i>
             </button>
             <button class="menu-item" [ngClass]="{ 'active': isActive(1) }" (click)="setActive(1)" [routerLink]="'/config'">
                 <i class="material-icons-outlined">settings</i>
             </button>
-            <button class="menu-item" [ngClass]="{ 'active': isActive(3) }" (click)="setActive(3)"  [routerLink]="'/home'">
+            <button class="menu-item" [ngClass]="{ 'active': isActive(3) }" (click)="setActive(3)" [routerLink]="'/home'">
                 <i class="material-icons-outlined">logout</i>
             </button>
         </nav>
@@ -17,20 +17,19 @@
         <header class="header">
             <h1>Acompanhe suas doações</h1>
         </header>
-
-        <div class="header-bar">
-            <span>Doação</span>
-            <span>Quantidade</span>
+        
+            <div class="header-bar" >
+                <span>Doação</span>
+                <span>Quantidade</span>
+            </div>
+            <div *ngFor="let lista of lista$ | async">
+            <div class="row-bar">
+                <span>{{lista.tipo}}</span>
+                <span>{{lista.quantidade}}</span>
+            </div>
         </div>
-
-        <div class="row-bar">
-            <span>Absorventes</span>
-            <span>12</span>
-        </div>
-
         <button class="back-button" (click)="goBack()">
             &#8592; <!-- Código da seta -->
         </button>
     </main>
 </div>
-
