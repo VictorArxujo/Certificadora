@@ -12,7 +12,7 @@ O sistema oferece funcionalidades para controle de estoque, registro de doaçõe
 
 -Administradores: Gerenciam o estoque, doações e distribuição dos produtos.
 
--Voluntários: Registram doações recebidas e distribuem produtos.
+-Voluntários: Registram doações e controle das doações feitas
 
 
 ## Problemas que o Sistema Pretende Resolver
@@ -31,11 +31,7 @@ O sistema oferece funcionalidades para controle de estoque, registro de doaçõe
 
 -O sistema deve permitir o registro das doações recebidas.
 
--O sistema deve controlar a entrada e saída de produtos, gerando relatórios.
-
 -O sistema deve gerar relatórios informando sobre doações, estoque e distribuições.
-
--O sistema deve disponibilizar uma interface para escolas solicitarem produtos e acompanharem as entregas.
 
 -O sistema deve contar com um mecanismo de autenticação para controle de acesso.
 
