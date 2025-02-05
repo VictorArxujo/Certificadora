@@ -1,0 +1,85 @@
+<div class="container">
+    <aside class="sidebar">
+        <img [src]="imagePath" alt="Logo bons Fluidos" class="logo">
+        <nav class="menu">
+            <button class="menu-item" [ngClass]="{ 'active': isActive(0) }" (click)="setActive(0)" [routerLink]="'/voluntario'">
+                <i class="material-icons-outlined">home</i>
+            </button>
+            <button class="menu-item" [ngClass]="{ 'active': isActive(1) }" (click)="setActive(1)" [routerLink]="'/config'">
+                <i class="material-icons-outlined">settings</i>
+            </button>
+            <button class="menu-item" [ngClass]="{ 'active': isActive(3) }" (click)="setActive(3)"  [routerLink]="'/home'">
+                <i class="material-icons-outlined">logout</i>
+            </button>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header class="header">
+            <h1>Registro de Doação</h1>
+        </header>
+
+        <section class="content">
+            <form class="donation-form" (ngSubmit)="onSubmit()">
+                <div class="form-left">
+                    <div class="form-group">
+                        <label for="cpf">CPF:</label>
+                        <input type="text" id="cpf" name="cpf" [(ngModel)]="donation.cpf" placeholder="Digite seu CPF" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="idade">Idade:</label>
+                        <input type="text" id="idade" name="idade" [(ngModel)]="donation.idade" placeholder="Digite sua idade" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cidade">Cidade:</label>
+                        <input type="text" id="cidade" name="cidade" [(ngModel)]="donation.cidade" placeholder="Digite o nome da sua cidade" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="endereco">Endereço:</label>
+                        <input type="text" id="endereco" name="endereco" [(ngModel)]="donation.endereco" placeholder="Digite seu endereço" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone para contato:</label>
+                        <input type="tel" id="telefone" name="telefone" [(ngModel)]="donation.telefone" placeholder="Digite seu telefone" required>
+                    </div>
+                </div>
+
+                <div class="form-right">
+                    <div class="form-group">
+                        <label for="doar">O que você pretende doar?</label>
+                        <select id="doar" name="doar" [(ngModel)]="donation.doar" (change)="toggleEspecificarField()" required>
+                            <option value="Absorvente">Absorvente</option>
+                            <option value="Coletor menstrual">Coletor menstrual</option>
+                            <option value="Absorvente interno">Absorvente interno</option>
+                            <option value="Outro">Outro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="especificar-group" *ngIf="isEspecificarVisible">
+                        <label for="especificar">Especifique:</label>
+                        <input type="text" id="especificar" name="especificar" [(ngModel)]="donation.especificar" placeholder="Digite o que pretende doar">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quantidade">Quantidade:</label>
+                        <input type="number" id="quantidade" name="quantidade" [(ngModel)]="donation.quantidade" placeholder="Digite a quantidade" required>
+                    </div>
+
+                    <div class="image-container">
+                        <img [src]="imagePath" alt="Logo bons Fluidos" alt="Logo" class="logo">
+                        <p class="image-caption">Sua doação é muito importante para nós!</p>
+                    </div>
+                </div>
+
+                <div class="form-footer">
+                    <div class="terms">
+                        <input type="checkbox" id="termos" name="termos" [(ngModel)]="donation.termos" required>
+                        <label for="termos">Eu concordo com os termos & condições</label>
+                    </div>
+                    <button type="submit" class="submit-button">Doar!</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</div>
+

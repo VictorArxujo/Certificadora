@@ -1,26 +1,85 @@
-# YasminApp
+# Projeto Bons Fluidos
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.7.
+Este projeto foi desenvolvido usando [Angular CLI](https://github.com/angular/angular-cli) version 19.0.7.
+
+# Descrição do Sistema Proposto
+
+O Bons Fluidos é um sistema web desenvolvido para gerenciar a arrecadação e distribuição de produtos de higiene menstrual sustentáveis. Seu principal objetivo é garantir que meninas em situação de vulnerabilidade tenham acesso a esses produtos, permitindo que frequentem a escola com dignidade e minimizando o impacto da pobreza menstrual.
+
+O sistema oferece funcionalidades para controle de estoque, registro de doações e distribuição dos produtos. Também permite a geração de relatórios e disponibiliza uma interface para escolas solicitarem os itens necessários.
+
+## Usuários Esperados para o Sistema
+
+-Administradores: Gerenciam o estoque, doações e distribuição dos produtos.
+
+-Voluntários: Registram doações recebidas e distribuem produtos.
+
+
+## Problemas que o Sistema Pretende Resolver
+
+-Falta de Acesso: Facilitar o acesso a produtos de higiene menstrual para meninas em situação de vulnerabilidade.
+
+-Controle de Estoque: Garantir uma gestão eficiente dos produtos, evitando desperdícios e faltas.
+
+-Transparência nas Doações: Manter um registro claro e acessível das doações e distribuições.
+
+-Conscientização: Promover informações sobre pobreza menstrual e educação.
+
+## Requisitos Funcionais
+
+-O sistema deve permitir o registro de produtos no estoque.
+
+-O sistema deve permitir o registro das doações recebidas.
+
+-O sistema deve controlar a entrada e saída de produtos, gerando relatórios.
+
+-O sistema deve gerar relatórios informando sobre doações, estoque e distribuições.
+
+-O sistema deve disponibilizar uma interface para escolas solicitarem produtos e acompanharem as entregas.
+
+-O sistema deve contar com um mecanismo de autenticação para controle de acesso.
+
+## Tecnologias Utilizadas
+
+-Frontend: Angular, HTML, CSS, JavaScript.
+
+-Backend: Node.js com Express.js.
+
+-Banco de Dados: MySQL.
+
+-IDEs: Visual Studio Code (desenvolvimento), Figma (design de interface e protótipos).
+
+## Divisão do Desenvolvimento
+
+Leonardo: Desenvolvimento do Backend e banco de dados.
+
+Jéssica: Desenvolvimento do Backend.
+
+Pedro: Desenvolvimento do Backend e banco de dados.
+
+Victor: Desenvolvimento do Frontend.
+
+Yasmin: Desenvolvimento do Frontend.
 
 ## Development server
 
-To start a local development server, run:
+Para iniciar um servidor de desenvolvimento local, execute:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Uma vez que o servidor esteja rodando, abra seu navegador e acesse http://localhost:4200/. A aplicação será recarregada automaticamente sempre que você modificar qualquer um dos arquivos-fonte.
 
 ## Code scaffolding
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+O Angular CLI inclui ferramentas poderosas para criação de código. Para gerar um novo componente, execute:
 
 ```bash
 ng generate component component-name
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Para obter uma lista completa de comandos disponíveis (como components, directives ou pipes), execute:
 
 ```bash
 ng generate --help
@@ -28,17 +87,17 @@ ng generate --help
 
 ## Building
 
-To build the project run:
+Para compilar o projeto, execute:
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Isso compilará seu projeto e armazenará os artefatos de build no diretório dist/. Por padrão, a compilação para produção otimiza sua aplicação para desempenho e velocidade.
 
 ## Running unit tests
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Para executar testes unitários com o [Karma](https://karma-runner.github.io), utilize o seguinte comando:
 
 ```bash
 ng test
@@ -46,14 +105,14 @@ ng test
 
 ## Running end-to-end tests
 
-For end-to-end (e2e) testing, run:
+Para testes de ponta a ponta (e2e), execute:
 
 ```bash
 ng e2e
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+O Angular CLI não inclui um framework padrão para testes e2e. Você pode escolher um que melhor se adapte às suas necessidades.
 
 ## Additional Resources
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Para mais informações sobre o uso do Angular CLI, incluindo referências detalhadas de comandos, visite a página Visão Geral e Referência de Comandos do Angular CLI.
